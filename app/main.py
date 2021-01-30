@@ -1,13 +1,12 @@
 from fastapi import FastAPI
-from app.trading.hqm import gethqm
+from app.functions.helloworld import hello
 
 app = FastAPI(
-    title="Algorithmic Trading",
-    description="App to pull daily HQM",
+    title="Fast API Service",
+    description="Fast API Service",
     version="0.1"
 )
 
 @app.post("/publish")
 async def root():
-    gethqm()
-    return "Success!"
+    return hello()
