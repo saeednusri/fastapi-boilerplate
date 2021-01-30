@@ -7,6 +7,7 @@ app = FastAPI(
     version="0.1"
 )
 
-@app.post("/publish")
+@app.get("/publish")
 async def root():
-    return hello()
+    call = hello()
+    return call
