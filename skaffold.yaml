@@ -1,0 +1,19 @@
+apiVersion: skaffold/v2beta11
+kind: Config
+
+build:
+  artifacts:
+  - image: fastapi
+    context: .
+
+profiles:
+  - name: dev
+    activation:
+      - command: dev
+    build:
+      artifacts:
+      - image: fastapi
+        context: .
+        docker:
+          buildArgs:
+            PORT: 8080
