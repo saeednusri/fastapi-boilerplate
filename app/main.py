@@ -10,4 +10,4 @@ app = FastAPI(
 @app.get("/publish")
 async def root():
     call = hello()
-    return call
+    return{"message": "Hello World!!!"}
